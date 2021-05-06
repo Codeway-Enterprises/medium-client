@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Logo } from '../../static/svg';
-
+import Button from '../common/Button';
 const HeaderBlock = styled.div`
   width: 100%;
   .wrapper {
@@ -25,7 +25,11 @@ const Header: React.FC<HeaderProps> = (props) => {
         <div className="brand">
           <Logo />
         </div>
-        <div className="right">Right side</div>
+        <div className="right">
+          <div className="right">
+            <Button>Click</Button>
+          </div>
+        </div>
       </div>
     </HeaderBlock>
   );

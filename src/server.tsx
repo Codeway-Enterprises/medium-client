@@ -41,7 +41,9 @@ function createPage(
 }
 
 const app = new Koa();
-
+/**
+ * Process server rendering
+ */
 const render: Middleware = async (ctx) => {
   const context = {};
   const extractor = new ChunkExtractor({ statsFile: clientStats });
@@ -51,6 +53,7 @@ const render: Middleware = async (ctx) => {
       <App />
     </StaticRouter>,
   );
+  // prepares meta tags including styled-components styles
   const sheet = new ServerStyleSheet();
   const rendered = ReactDOMServer.renderToString(sheet.collectStyles(jsx));
   const scStyles = sheet.getStyleTags();
