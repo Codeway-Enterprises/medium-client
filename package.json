@@ -181,8 +181,5 @@
     "plugins": [
       "@loadable/babel-plugin"
     ]
-  },
-  "devDependencies": {
-    "@types/loadable__server": "^5.12.5"
   }
 }
