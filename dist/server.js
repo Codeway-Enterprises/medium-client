@@ -42,7 +42,7 @@
 /******/
 /******/ 		// "0" is the signal for "already loaded"
 /******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("./static/js/" + ({"1":"pages-PostPage","2":"pages-main-MainPage"}[chunkId]||chunkId) + "." + {"1":"d593ec06","2":"de1582d7"}[chunkId] + ".chunk.js");
+/******/ 			var chunk = require("./static/js/" + ({"1":"pages-PostPage","2":"pages-main-MainPage"}[chunkId]||chunkId) + "." + {"1":"d593ec06","2":"0000829e"}[chunkId] + ".chunk.js");
 /******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				modules[moduleId] = moreModules[moduleId];
