@@ -42,7 +42,7 @@
 /******/
 /******/ 		// "0" is the signal for "already loaded"
 /******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("./static/js/" + ({"1":"pages-PostPage","2":"pages-main-MainPage"}[chunkId]||chunkId) + "." + {"1":"aa202b43","2":"6c102d52"}[chunkId] + ".chunk.js");
+/******/ 			var chunk = require("./static/js/" + ({"1":"pages-PostPage","2":"pages-main-MainPage"}[chunkId]||chunkId) + "." + {"1":"d593ec06","2":"de1582d7"}[chunkId] + ".chunk.js");
 /******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				modules[moduleId] = moreModules[moduleId];
@@ -114,7 +114,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 12);
+/******/ 	return __webpack_require__(__webpack_require__.s = 14);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -133,7 +133,7 @@ module.exports = require("react-router");
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(13);
+module.exports = __webpack_require__(15);
 
 
 /***/ }),
@@ -174,6 +174,18 @@ module.exports = require("@loadable/server");
 
 /***/ }),
 /* 9 */
+/***/ (function(module, exports) {
+
+module.exports = require("koa-static");
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+module.exports = require("koa-router");
+
+/***/ }),
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -184,8 +196,6 @@ module.exports = require("@loadable/server");
 /* harmony import */ var _loadable_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
 /* harmony import */ var _loadable_component__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_loadable_component__WEBPACK_IMPORTED_MODULE_2__);
 
- // import MainPage from './pages/main/MainPage';
-// import PostPage from './pages/PostPage';
 
 
 var MainPage = _loadable_component__WEBPACK_IMPORTED_MODULE_2___default()({
@@ -207,7 +217,7 @@ var MainPage = _loadable_component__WEBPACK_IMPORTED_MODULE_2___default()({
     return false;
   },
   importAsync: function importAsync() {
-    return __webpack_require__.e(/* import() | pages-main-MainPage */ 2).then(__webpack_require__.bind(null, 10));
+    return __webpack_require__.e(/* import() | pages-main-MainPage */ 2).then(__webpack_require__.bind(null, 12));
   },
   requireAsync: function requireAsync(props) {
     var _this = this;
@@ -230,7 +240,7 @@ var MainPage = _loadable_component__WEBPACK_IMPORTED_MODULE_2___default()({
   },
   resolve: function resolve() {
     if (true) {
-      return /*require.resolve*/(10);
+      return /*require.resolve*/(12);
     }
 
     return eval('require.resolve')("./pages/main/MainPage");
@@ -255,7 +265,7 @@ var PostPage = _loadable_component__WEBPACK_IMPORTED_MODULE_2___default()({
     return false;
   },
   importAsync: function importAsync() {
-    return __webpack_require__.e(/* import() | pages-PostPage */ 1).then(__webpack_require__.bind(null, 11));
+    return __webpack_require__.e(/* import() | pages-PostPage */ 1).then(__webpack_require__.bind(null, 13));
   },
   requireAsync: function requireAsync(props) {
     var _this = this;
@@ -278,7 +288,7 @@ var PostPage = _loadable_component__WEBPACK_IMPORTED_MODULE_2___default()({
   },
   resolve: function resolve() {
     if (true) {
-      return /*require.resolve*/(11);
+      return /*require.resolve*/(13);
     }
 
     return eval('require.resolve')("./pages/PostPage");
@@ -302,22 +312,22 @@ var App = function App(props) {
 /* harmony default export */ __webpack_exports__["a"] = (App);
 
 /***/ }),
-/* 10 */,
-/* 11 */,
-/* 12 */
+/* 12 */,
+/* 13 */,
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(14);
+module.exports = __webpack_require__(16);
 
 
 /***/ }),
-/* 13 */
+/* 15 */
 /***/ (function(module, exports) {
 
 module.exports = require("regenerator-runtime");
 
 /***/ }),
-/* 14 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -385,12 +395,20 @@ var external_loadable_server_ = __webpack_require__(8);
 // EXTERNAL MODULE: external "styled-components"
 var external_styled_components_ = __webpack_require__(5);
 
+// EXTERNAL MODULE: external "koa-static"
+var external_koa_static_ = __webpack_require__(9);
+var external_koa_static_default = /*#__PURE__*/__webpack_require__.n(external_koa_static_);
+
+// EXTERNAL MODULE: external "koa-router"
+var external_koa_router_ = __webpack_require__(10);
+var external_koa_router_default = /*#__PURE__*/__webpack_require__.n(external_koa_router_);
+
 // EXTERNAL MODULE: external "path"
 var external_path_ = __webpack_require__(3);
 var external_path_default = /*#__PURE__*/__webpack_require__.n(external_path_);
 
 // EXTERNAL MODULE: ./src/App.tsx
-var App = __webpack_require__(9);
+var App = __webpack_require__(11);
 
 // CONCATENATED MODULE: ./src/server.tsx
 
@@ -403,16 +421,20 @@ var App = __webpack_require__(9);
 
 
 
+
+
 var clientStats = external_path_default.a.resolve('./build/loadable-stats.json');
-var ssrStats = external_path_default.a.resolve('./dist/loadable-stats.json');
 
 function createPage(html, collected) {
   return "<!doctype html>\n  <html lang=\"en\">\n  \n  <head>\n    <meta charset=\"utf-8\" />\n    <link rel=\"shortcut icon\" href=\"/favicon.ico\" />\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no\" />\n    <meta name=\"theme-color\" content=\"#000000\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>React App</title>\n    ".concat(collected.link, "\n    ").concat(collected.style, "\n  </head>\n  \n  <body><noscript>You need to enable JavaScript to run this app.</noscript>\n    <div id=\"root\">").concat(html, "</div>\n    ").concat(collected.script, "\n  </body>\n  \n  </html>");
 }
 
 var app = new external_koa_default.a();
+/**
+ * Process server rendering
+ */
 
-var ssr = /*#__PURE__*/function () {
+var render = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regenerator_default.a.mark(function _callee(ctx) {
     var context, extractor, jsx, sheet, rendered, scStyles, collected, page;
     return regenerator_default.a.wrap(function _callee$(_context) {
@@ -422,11 +444,13 @@ var ssr = /*#__PURE__*/function () {
             context = {};
             extractor = new external_loadable_server_["ChunkExtractor"]({
               statsFile: clientStats
-            });
+            }); // const matches = getMatches(ctx.url);
+
             jsx = extractor.collectChunks( /*#__PURE__*/external_react_default.a.createElement(external_react_router_["StaticRouter"], {
               location: ctx.url,
               context: context
-            }, /*#__PURE__*/external_react_default.a.createElement(App["a" /* default */], null)));
+            }, /*#__PURE__*/external_react_default.a.createElement(App["a" /* default */], null))); // prepares meta tags including styled-components styles
+
             sheet = new external_styled_components_["ServerStyleSheet"]();
             rendered = server_default.a.renderToString(sheet.collectStyles(jsx));
             scStyles = sheet.getStyleTags();
@@ -446,15 +470,41 @@ var ssr = /*#__PURE__*/function () {
     }, _callee);
   }));
 
-  return function ssr(_x) {
+  return function render(_x) {
     return _ref.apply(this, arguments);
   };
 }();
 
-app.use(ssr);
+var router = new external_koa_router_default.a();
+router.get('/', render); // ignores index.html
+
+app.use(router.routes()).use(router.allowedMethods());
+app.use(external_koa_static_default()(external_path_default.a.resolve('./build'))); // serves static files
+// fallback
+
+app.use(function (ctx, next) {
+  if (ctx.status !== 404) {
+    return;
+  }
+
+  return next();
+});
+app.use(render);
 app.listen(5000, function () {
   console.log('SSR server listening to http://localhost:5000');
 });
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router-dom");
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/md");
 
 /***/ })
 /******/ ]);
