@@ -16,7 +16,7 @@ const ButtonBlock = styled.button<{ theme: string }>`
     props.theme === 'default' &&
     css`
       background: ${palette.blue0};
-      color: white;
+      color: ${palette.yellow};
       border-radius: 1rem;
       &:hover,
       &:focus {
